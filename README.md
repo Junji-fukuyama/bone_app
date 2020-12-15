@@ -19,10 +19,12 @@
 |-----|----|-------|
 |title|string|null: false|
 |text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+
 
 ### アソシエーション
 - belongs_to: user
-- has_one: order
+- has_many: orders
 - has_many: comments
 
 
@@ -44,7 +46,7 @@
 |Colum|Type|Options|
 |-----|----|-------|
 |postal_code|string|null :false|
-|prefecture|integer|null: false|
+|prefecture_id(active_hash)|integer|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building|string||
