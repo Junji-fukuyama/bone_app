@@ -23,9 +23,9 @@
 
 
 ### アソシエーション
-- belongs_to: user
-- has_many: orders
-- has_many: comments
+- belongs_to :user
+- has_many :orders
+- has_many :comments
 
 
 
@@ -62,8 +62,9 @@
 |Colum|Type|Options|
 |-----|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|aritcle_id|integer|null: false, foreign_key: true|
-|text|text||
+|article_id|integer|null: false, foreign_key: true|
+|text|text|null: false|
+|price|integer|null: false|
 
 ### アソシエーション
 - belongs_to :user
