@@ -19,6 +19,8 @@
 |-----|----|-------|
 |title|string|null: false|
 |text|text|null: false|
+|price|integer|null: false|
+|check_box|boolean|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 
@@ -64,7 +66,6 @@
 |user_id|integer|null: false, foreign_key: true|
 |article_id|integer|null: false, foreign_key: true|
 |text|text|null: false|
-|price|integer|null: false|
 
 ### アソシエーション
 - belongs_to :user
