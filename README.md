@@ -8,9 +8,9 @@
 |encrypted_password|string|null, false|
 
 ### アソシエーション
-- has_many: articles
-- has_many: orders
-- has_many: comments
+- has_many :articles
+- has_many :orders
+- has_many :comments
 
 
 
@@ -20,7 +20,7 @@
 |title|string|null: false|
 |text|text|null: false|
 |price|integer|null: false|
-|check_box|boolean|null: false|
+|purchase_setting|boolean|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 
