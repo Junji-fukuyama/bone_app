@@ -1,24 +1,72 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Colum|Type|Options|
+|-----|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|encrypted_password|string|null, false|
 
-Things you may want to cover:
+### アソシエーション
+- has_many :articles
+- has_many :orders
+- has_many :comments
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## articlesテーブル
+|Colum|Type|Options|
+|-----|----|-------|
+|title|string|null: false|
+|text|text|null: false|
+|price|integer||
+|purchase_setting|boolean|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
-* Database creation
 
-* Database initialization
+### アソシエーション
+- belongs_to :user
+- has_many :orders
+- has_many :comments
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## ordersテーブル
+|Colum|Type|Options|
+|-----|----|-------|
+|article_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
-* ...
+### アソシエーション
+- belongs_to :article
+- belongs_to :user
+- has_one :address
+
+
+
+## addressesテーブル
+|Colum|Type|Options|
+|-----|----|-------|
+|postal_code|string|null :false|
+|prefecture_id(active_hash)|integer|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building|string||
+|phone_number|string|null: false|
+|order_id|integer|null: false, foreign_key: true|
+
+### アソシエーション
+- belongs_to :order
+
+
+
+## commentsテーブル
+|Colum|Type|Options|
+|-----|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|article_id|integer|null: false, foreign_key: true|
+|text|text|null: false|
+
+### アソシエーション
+- belongs_to :user
+- belongs_to :article
