@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="inner">
+        <div class="title">
+          <%= link_to "BONE", "#", class: :app_btn %>
+          <div class="nav">
+            <%= link_to "ユーザー名", "#", class: :nav_btn %>
+            <%= link_to "ログアウト", "#", method: :delete, class: :nav_btn %>
+            <%= link_to  "投稿する", "#", class: :nav_btn %>
+            <%= link_to "ログイン", "#", class: :nav_btn %>
+            <%= link_to "新規登録", "#", class: :nav_btn %>
+          </div>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+    </footer>
   </body>
 </html>
