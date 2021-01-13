@@ -7,35 +7,34 @@
   &__inner {
     width: 90%;
     margin: 0 auto;
+  }
+}
 
+.Title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 
-    .Title {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
+  &__appbtn {
+    color: darkgreen;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: rgba(0, 0, 0, .2) 3px 3px 3px;
+  }
+}
 
-      &__appbtn {
-        color: darkgreen;
-        text-decoration: none;
-        font-size: 25px;
-        font-weight: bold;
-        text-shadow: rgba(0, 0, 0, .2) 3px 3px 3px;
-      }
+.Nav {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
 
-      .Nav {
-        width: 30%;
-        display: flex;
-        justify-content: space-between;
-      
-        &__btn {
-          display: inline-block;
-          padding: 10px;
-          font-size: 10px;
-          color: black;
-          text-decoration: none;
-          border: 1px black solid;
-        }
-      }
-    }
+  &__btn {
+    display: inline-block;
+    padding: 10px;
+    font-size: 10px;
+    color: black;
+    text-decoration: none;
+    border: 1px black solid;
   }
 }
