@@ -1,19 +1,20 @@
-.header {
+.Header {
   background-color: lightgrey;
   margin-bottom: 48px;
   padding: 20px 0;
   border-bottom: 1px solid #D8D8D8;
 
-  .inner {
+  &__inner {
     width: 90%;
     margin: 0 auto;
 
-    .title {
+
+    .Title {
       display: flex;
       width: 100%;
       justify-content: space-between;
 
-      .app_btn {
+      &__appbtn {
         color: darkgreen;
         text-decoration: none;
         font-size: 25px;
@@ -21,12 +22,12 @@
         text-shadow: rgba(0, 0, 0, .2) 3px 3px 3px;
       }
 
-      .nav {
+      .Nav {
         width: 30%;
         display: flex;
         justify-content: space-between;
-
-        .nav_btn{
+      
+        &__btn {
           display: inline-block;
           padding: 10px;
           font-size: 10px;
@@ -34,7 +35,7 @@
           text-decoration: none;
           border: 1px black solid;
         }
-      }  
+      }
     }
   }
 }
