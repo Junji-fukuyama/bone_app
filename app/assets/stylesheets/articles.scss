@@ -1,7 +1,7 @@
-@mixin flex {
-  display: flex;
-  justify-content: space-between;
-}
+// @mixin flex {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 .Header {
   background-color: lightgrey;
@@ -16,8 +16,8 @@
 }
 
 .Title {
-  width: 100%;
   @include flex;
+  width: 100%;
 
   &__appbtn {
     color: $green;
@@ -29,8 +29,8 @@
 }
 
 .Nav {
-  width: 30%;
   @include flex;
+  width: 30%;
 
   &__btn {
     display: inline-block;
