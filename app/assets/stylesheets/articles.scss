@@ -56,6 +56,11 @@
     border: 3px $green solid;
   }
 
+  &__pict {
+    height: 100%;
+    width: 100%;
+  }
+
   &__text {
     @include width-margin;
     height: 200px;
@@ -68,4 +73,3 @@
     border: 3px $green solid;
   }
 }
-
