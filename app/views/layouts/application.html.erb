@@ -14,13 +14,16 @@
       <div class="Header__inner">
         <div class="Title">
           <%= link_to "BONE", root_path, class: :Title__appbtn %>
-          <div class="Nav">
-            <%= link_to "ユーザー名", root_path, class: :Nav__btn %>
-            <%= link_to "ログアウト", "#", method: :delete, class: :Nav__btn %>
-            <%= link_to  "投稿する", "#", class: :Nav__btn %>
-            <%= link_to "ログイン", "#", class: :Nav__btn %>
-            <%= link_to "新規登録", "#", class: :Nav__btn %>
-          </div>
+        </div>
+        <div class="Nav">
+          <% if user_signed_in? %>
+            <%= link_to current_user.nickname, root_path, class: :Nav__username %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :Nav__logout %>
+            <%= link_to  "投稿する", "#", class: :Nav__post %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: :Nav__signin %>
+            <%= link_to "新規登録", new_user_registration_path, class: :Nav__signup %>
+          <% end %>
         </div>
       </div>
     </header>

@@ -1,9 +1,19 @@
-@mixin flex {
-  display: flex;
-  justify-content: space-between;
+@mixin text-none {
+  text-decoration: none;
 }
 
-@mixin width-margin {
-  width: 260px;
-  margin: 5px;
+@mixin flex {
+  display: flex;
+}
+
+@mixin block {
+  display: block;
+}
+
+@mixin inline-block {
+  display: inline-block;
+}
+
+@mixin border-none {
+  border-style: none;
 }
