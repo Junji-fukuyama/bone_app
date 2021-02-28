@@ -1,29 +1,25 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="Registration">
+  <%= form_with model: @user, url: user_registration_path, class: 'Registration__user', local: true do |f| %>
+    <h1>新規登録</h1>
+    <%= devise_error_messages! %>
+    <div class="Registration__nickname">
+      <%= f.label :nickname, "ニックネーム" %><br />
+      <%= f.text_field :nickname, placeholder: "例) 山田太郎", maxlength: "40", autofocus: true %>
+    </div>
+    <div class="Registration__email">
+      <%= f.label :email, "Eメール" %><br />
+      <%= f.email_field :email, placeholder: "PC・携帯どちらでも可", autofocus: true %>
+    </div>
+    <div class="Registration__password">
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, placeholder: "7文字以上の半角英数字" %>
+    </div>
+    <div class="Registration__password-confirmation">
+      <%= f.label :password_confirmation, "確認用パスワード" %>
+      <%= f.password_field :password_confirmation, placeholder: "同じパスワードを入力して下さい" %>
+    </div>
+    <div class="Registration__btn">
+      <%= f.submit "新規登録" %>
+    </div>
+  <% end %>
+</div>
